@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b2b">
+  <meta name="description" content="Discover thoughtful waterfront living and investment opportunities at Zenith Bay. Explore residences designed around comfort, connection and long-term value.">
+  <title>Zenith Bay | A Better Place to Belong</title>
+  <style>
+    :root{--ink:#132e2d;--deep:#102b2b;--green:#286b5b;--mint:#dcece4;--gold:#d6b779;--paper:#f8f7f2;--muted:#657573;--white:#fff;--line:rgba(19,46,45,.14);--radius:22px;--shadow:0 18px 50px rgba(16,43,43,.10)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .topbar{background:var(--deep);color:#eaf2ee;font-size:.82rem;padding:8px 0}
+    .topbar-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topbar span{opacity:.88}
+    header{position:sticky;top:0;z-index:10;background:rgba(248,247,242,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.04em;font-size:1.12rem}
+    .brand-mark{width:38px;height:38px;border-radius:12px;background:var(--deep);display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:1.3rem}
+    .nav-links{display:flex;align-items:center;gap:28px;color:#425856;font-size:.92rem}
+    .nav-links a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;background:var(--green);color:white;font-weight:700;cursor:pointer;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px);background:#1e5548}
+    .btn-light{background:#fff;color:var(--deep)}
+    .btn-light:hover{background:#edf4ef;color:var(--deep)}
+    .menu-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+    .hero{padding:58px 0 66px;overflow:hidden;background:radial-gradient(ellipse at 80% 12%,rgba(214,183,121,.22),transparent 33%),linear-gradient(120deg,#f8f7f2 0%,#edf4ef 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:44px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-weight:800;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--gold)}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(2.8rem,5.2vw,5.1rem);line-height:1.03;letter-spacing:-.045em;margin:18px 0 22px;max-width:650px}
+    h1 em{font-weight:400;color:var(--green)}
+    .hero-copy{font-size:1.08rem;color:#526663;max-width:550px;margin-bottom:29px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px;color:#526663;font-size:.85rem}
+    .trust-row strong{color:var(--ink)}
+    .trust-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;margin-right:7px}
+    .hero-art{position:relative;min-height:460px;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#b9d4d1 0%,#e7e9d7 48%,#a8c6b5 49%,#42796d 100%);box-shadow:var(--shadow)}
+    .sun{position:absolute;width:90px;height:90px;right:15%;top:12%;background:#f4dfaa;border-radius:50%;box-shadow:0 0 70px rgba(244,223,170,.55)}
+    .water{position:absolute;bottom:0;left:0;right:0;height:27%;background:repeating-linear-gradient(174deg,rgba(255,255,255,.18) 0 2px,transparent 2px 22px),linear-gradient(180deg,#5b9387,#2c675d)}
+    .hill{position:absolute;bottom:25%;left:-10%;width:120%;height:33%;background:#719b7e;border-radius:50% 50% 0 0/40% 40% 0 0;transform:rotate(-5deg)}
+    .building{position:absolute;bottom:24%;width:28%;background:linear-gradient(90deg,#f5f0df,#fff9e9 60%,#d9d7c6);border:1px solid rgba(19,46,45,.16);box-shadow:12px 8px 0 rgba(19,46,45,.09)}
+    .building:before{content:"";position:absolute;inset:12px 10px;background:repeating-linear-gradient(90deg,transparent 0 16px,rgba(53,111,101,.75) 16px 20px),repeating-linear-gradient(0deg,transparent 0 23px,rgba(53,111,101,.65) 23px 27px)}
+    .b1{height:48%;left:16%;width:24%;transform:skewY(-3deg)}
+    .b2{height:63%;left:40%;width:27%;bottom:24%;background:linear-gradient(90deg,#e6e2d1,#fff8e5 60%,#c8d0c5)}
+    .b3{height:38%;left:65%;width:20%;bottom:24%;transform:skewY(4deg)}
+    .b2:after{content:"";position:absolute;top:-18px;left:-1px;right:-1px;height:18px;background:#d6b779;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%)}
+    .art-label{position:absolute;left:22px;bottom:20px;background:rgba(255,255,255,.92);padding:13px 16px;border-radius:14px;display:flex;gap:12px;align-items:center;box-shadow:0 8px 30px #173c3322}
+    .art-label .icon{width:38px;height:38px;background:var(--mint);border-radius:12px;display:grid;place-items:center;font-size:1.2rem}
+    .art-label strong{display:block;font-size:.9rem}
+    .art-label small{display:block;color:var(--muted);font-size:.77rem}
+    .section{padding:86px 0}
+    .section-head{max-width:680px;margin:0 auto 42px;text-align:center}
+    .section-head h2{font-family:Georgia,serif;font-size:clamp(2.1rem,3.8vw,3.4rem);line-height:1.12;letter-spacing:-.03em;margin:14px 0}
+    .section-head p{color:var(--muted);margin-bottom:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .benefit{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+    .benefit-icon{width:48px;height:48px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem;margin-bottom:20px}
+    .benefit h3{font-size:1.12rem;margin-bottom:8px}
+    .benefit p{color:var(--muted);font-size:.94rem;margin:0}
+    .feature-band{background:var(--deep);color:#f5f5ec;padding:70px 0}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .feature-band .eyebrow{color:#d8c28f}
+    .feature-band h2{font-family:Georgia,serif;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.1;font-weight:500;margin:15px 0 18px}
+    .feature-band p{color:#c2d2cc}
+    .feature-points{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .point{border-top:1px solid rgba(255,255,255,.22);padding-top:15px}
+    .point strong{display:block;color:#e6d09a;font-size:1.03rem;margin-bottom:4px}
+    .point span{color:#c2d2cc;font-size:.9rem}
+    .cta{padding:84px 0;text-align:center;background:linear-gradient(135deg,#e6efe8,#f8f7f2)}
+    .cta-box{max-width:780px;margin:auto}
+    .cta h2{font-family:Georgia,serif;font-size:clamp(2.3rem,4vw,3.6rem);line-height:1.1;font-weight:500;margin:14px 0}
+    .cta p{color:var(--muted);max-width:580px;margin:0 auto 25px}
+    .contact-note{font-size:.82rem;color:#71817d;margin-top:14px}
+    footer{background:#0b2222;color:#dbe5df;padding:27px 0;font-size:.85rem}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .footer-inner span{color:#a8bcb4}
+    @media(max-width:850px){.nav-links{gap:16px}.hero-grid{gap:25px}.hero-art{min-height:390px}.benefits{gap:14px}.benefit{padding:22px}.feature-grid{gap:30px}}
+    @media(max-width:680px){
+      .container{width:min(100% - 30px,560px)}
+      .topbar-inner{justify-content:center;text-align:center}
+      .nav{height:68px}.menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+      .nav-links .btn{margin-top:14px;border-bottom:0}
+      .hero{padding:42px 0 45px}.hero-grid{grid-template-columns:1fr;gap:32px}
+      h1{font-size:clamp(2.65rem,12vw,4rem)}.hero-copy{font-size:1rem}
+      .hero-art{min-height:340px;border-radius:23px}.sun{width:66px;height:66px}
+      .section{padding:64px 0}.benefits{grid-template-columns:1fr}.benefit{padding:24px}
+      .feature-band{padding:62px 0}.feature-grid{grid-template-columns:1fr;gap:22px}.feature-points{gap:16px}
+      .cta{padding:65px 0}.footer-inner{justify-content:center;text-align:center;flex-direction:column;gap:6px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container topbar-inner"><span>Thoughtful living. Considered investment.</span><span>For Indian &amp; NRI investors</span></div></div>
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Zenith Bay home"><span class="brand-mark">Z</span><span>ZENITH BAY</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">☰ Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#why-zenith">Why Zenith Bay</a><a href="#lifestyle">Lifestyle</a><a href="#contact">Get in touch</a>
+        <a class="btn" href="#contact">Request Information <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">A new perspective on living</span>
+          <h1>Come home to a life that feels <em>exceptional.</em></h1>
+          <p class="hero-copy">Discover Zenith Bay — a considered approach to modern living, where everyday comfort meets a vision for tomorrow. Explore a place designed for your next chapter.</p>
+          <div class="hero-actions"><a class="btn" href="#contact">Explore Zenith Bay <span aria-hidden="true">→</span></a><a class="btn btn-light" href="#why-zenith">Discover the vision</a></div>
+          <div class="trust-row"><span><i class="trust-dot"></i><strong>Thoughtfully planned</strong></span><span><i class="trust-dot"></i>Designed around you</span></div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Stylized illustration of contemporary residences beside tranquil water">
+          <div class="sun"></div><div class="hill"></div><div class="building b1"></div><div class="building b2"></div><div class="building b3"></div><div class="water"></div>
+          <div class="art-label"><span class="icon">⌂</span><span><strong>A place to belong</strong><small>Comfort today. Possibility tomorrow.</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-zenith">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">The Zenith Bay difference</span><h2>More than a place.<br>A considered way to live.</h2><p>Whether you are planning a home for your family or exploring a property opportunity from overseas, start with what matters most.</p></div>
+        <div class="benefits">
+          <article class="benefit"><div class="benefit-icon" aria-hidden="true">⌂</div><h3>Made for everyday life</h3><p>Spaces and surroundings imagined around comfort, connection and the moments that make a place feel like home.</p></article>
+          <article class="benefit"><div class="benefit-icon" aria-hidden="true">◇</div><h3>A considered opportunity</h3><p>Get the information you need to evaluate the opportunity, understand the details and make a confident decision.</p></article>
+          <article class="benefit"><div class="benefit-icon" aria-hidden="true">◎</div><h3>Clarity wherever you are</h3><p>Whether you are nearby or living abroad, our team can help you take the next step and answer your questions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" id="lifestyle">
+      <div class="container feature-grid">
+        <div><span class="eyebrow">Your next chapter</span><h2>Rooted in comfort.<br>Open to possibility.</h2><p>Choosing a property is a meaningful decision. Explore the vision, ask the right questions and get the details that matter to you before taking the next step.</p><a class="btn btn-light" href="#contact">Talk to our team <span aria-hidden="true">→</span></a></div>
+        <div class="feature-points">
+          <div class="point"><strong>01 / Discover</strong><span>Understand the project and its vision.</span></div>
+          <div class="point"><strong>02 / Explore</strong><span>Review available details and options.</span></div>
+          <div class="point"><strong>03 / Evaluate</strong><span>Ask questions and assess your fit.</span></div>
+          <div class="point"><strong>04 / Connect</strong><span>Speak with our team about next steps.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-box"><span class="eyebrow">Start a conversation</span><h2>Your Zenith Bay story starts here.</h2><p>Interested in learning more? Share your interest with our team and take the first step towards discovering Zenith Bay.</p><a class="btn" href="mailto:hello@zenithbay.example?subject=Zenith%20Bay%20Information%20Request">Request Information <span aria-hidden="true">↗</span></a><div class="contact-note">Replace this sample email with the official Zenith Bay contact address before publishing.</div></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">Z</span><span>ZENITH BAY</span></a><span>© <span id="year"></span> Zenith Bay. All rights reserved.</span><span>Made for better beginnings.</span></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
